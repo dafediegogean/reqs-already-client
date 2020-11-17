@@ -1,8 +1,9 @@
 package br.com.reqs.already.client;
 
 /**
- * Hello world!
- *
+ * @author <a href="mailto:dafediegogean@gmail.com">Diego Gean da Fé</a>
+ * @version
+ * @since 30 de out de 2020, 21:42:10
  */
 public class App 
 {
