@@ -1,4 +1,4 @@
-package br.com.reqs.already.client;
+package br.com.reqs.already.client.proxy;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -10,14 +10,13 @@ import javax.jws.WebService;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
-import br.com.reqs.already.api.v1.ListaProdutoDTO;
-import br.com.reqs.already.api.v1.ProdutoWS;
-import br.com.reqs.already.api.v1.TodosOsProdutos;
-import br.com.reqs.already.api.v1.TodosOsProdutosResponse;
-import br.com.reqs.already.api.v1.Token;
+import br.com.reqs.already.api.v1.ws.ProdutoWS;
+import br.com.reqs.already.api.v1.ws.TodosOsProdutos;
+import br.com.reqs.already.api.v1.ws.TodosOsProdutosResponse;
+import br.com.reqs.already.api.v1.ws.Token;
 
 @WebService
-public class ProdutoConsumeWS {
+public class ProdutoProxy {
 	
 	/**
 	 * Método getAll(String token), recebe como parâmetro o token,

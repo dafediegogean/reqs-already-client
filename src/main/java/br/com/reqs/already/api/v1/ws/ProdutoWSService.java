@@ -1,5 +1,5 @@
 
-package br.com.reqs.already.api.v1;
+package br.com.reqs.already.api.v1.ws;
 
 import java.net.MalformedURLException;
 import java.net.URL;

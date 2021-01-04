@@ -1,4 +1,4 @@
-package br.com.reqs.already.client;
+package br.com.reqs.already;
 
 /**
  * @author <a href="mailto:dafediegogean@gmail.com">Diego Gean da Fé</a>

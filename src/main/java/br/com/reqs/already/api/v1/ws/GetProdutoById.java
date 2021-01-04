@@ -1,5 +1,5 @@
 
-package br.com.reqs.already.api.v1;
+package br.com.reqs.already.api.v1.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java de getProdutoById complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>O seguinte fragmento do esquema especifica o conteï¿½do esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="getProdutoById">
@@ -34,7 +34,7 @@ public class GetProdutoById {
     protected long id;
 
     /**
-     * Obtém o valor da propriedade id.
+     * Obtï¿½m o valor da propriedade id.
      * 
      */
     public long getId() {

@@ -1,5 +1,5 @@
 
-package br.com.reqs.already.api.v1;
+package br.com.reqs.already.api.v1.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java de token complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>O seguinte fragmento do esquema especifica o conteï¿½do esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="token">
@@ -36,7 +36,7 @@ public class Token {
     protected String token;
 
     /**
-     * Obtém o valor da propriedade token.
+     * Obtï¿½m o valor da propriedade token.
      * 
      * @return
      *     possible object is

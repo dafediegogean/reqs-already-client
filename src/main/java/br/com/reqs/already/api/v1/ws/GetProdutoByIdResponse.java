@@ -1,5 +1,5 @@
 
-package br.com.reqs.already.api.v1;
+package br.com.reqs.already.api.v1.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java de getProdutoByIdResponse complex type.
  * 
- * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
+ * <p>O seguinte fragmento do esquema especifica o conteï¿½do esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="getProdutoByIdResponse">
@@ -34,7 +34,7 @@ public class GetProdutoByIdResponse {
     protected ProdutoDTO produto;
 
     /**
-     * Obtém o valor da propriedade produto.
+     * Obtï¿½m o valor da propriedade produto.
      * 
      * @return
      *     possible object is
