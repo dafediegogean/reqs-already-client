@@ -18,19 +18,19 @@ import br.com.reqs.already.api.v1.ws.Token;
 
 @WebService
 public class ProdutoProxy {
-	
+		
 	/**
-	 * Método getAll(String token), recebe como parâmetro o token,
+	 * Endpoint getProdutos, recebe como parâmetro o token,
 	 * busca e retorna todos os produtos cadastrados na base de dados.
 	 * 
 	 * @param token
-	 * @return ListaProdutoDTO
-	 * @throws MalformedURLException 
-	 * @throws AuthorizationException 
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws AuthorizationException
 	 */
-	@WebMethod(operationName = "consumeGetAll")
+	@WebMethod(operationName = "getProdutos")
 	@WebResult(name = "produtos")
-	public GetProdutosResponse consumeGetAll(@WebParam(name = "token", header = true) String token) 
+	public GetProdutosResponse getProdutos(@WebParam(name = "token", header = true) String token) 
 			throws MalformedURLException, AuthorizationException {
 		URL url = new URL("http://localhost:8080/reqs-already-service-0.0.1/ProdutoWS?wsdl");
 		QName qname = new QName("http://ws.v1.api.already.reqs.com.br/", "ProdutoWSService");
