@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de todosOsProdutos complex type.
+ * <p>Classe Java de removerProduto complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conte�do esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="todosOsProdutos">
+ * &lt;complexType name="removerProduto">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="paginacao" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,27 +26,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "todosOsProdutos", propOrder = {
-    "paginacao"
+@XmlType(name = "removerProduto", propOrder = {
+    "id"
 })
-public class TodosOsProdutos {
+public class RemoverProduto {
 
-    protected boolean paginacao;
+    protected long id;
 
     /**
-     * Obt�m o valor da propriedade paginacao.
+     * Obt�m o valor da propriedade id.
      * 
      */
-    public boolean isPaginacao() {
-        return paginacao;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Define o valor da propriedade paginacao.
+     * Define o valor da propriedade id.
      * 
      */
-    public void setPaginacao(boolean value) {
-        this.paginacao = value;
+    public void setId(long value) {
+        this.id = value;
     }
 
 }

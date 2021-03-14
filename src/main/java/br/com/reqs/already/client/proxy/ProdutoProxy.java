@@ -10,9 +10,10 @@ import javax.jws.WebService;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
+import br.com.reqs.already.api.v1.ws.AuthorizationException;
+import br.com.reqs.already.api.v1.ws.GetProdutos;
+import br.com.reqs.already.api.v1.ws.GetProdutosResponse;
 import br.com.reqs.already.api.v1.ws.ProdutoWS;
-import br.com.reqs.already.api.v1.ws.TodosOsProdutos;
-import br.com.reqs.already.api.v1.ws.TodosOsProdutosResponse;
 import br.com.reqs.already.api.v1.ws.Token;
 
 @WebService
@@ -25,10 +26,12 @@ public class ProdutoProxy {
 	 * @param token
 	 * @return ListaProdutoDTO
 	 * @throws MalformedURLException 
+	 * @throws AuthorizationException 
 	 */
 	@WebMethod(operationName = "consumeGetAll")
 	@WebResult(name = "produtos")
-	public TodosOsProdutosResponse consumeGetAll(@WebParam(name = "token", header = true) String token) throws MalformedURLException {
+	public GetProdutosResponse consumeGetAll(@WebParam(name = "token", header = true) String token) 
+			throws MalformedURLException, AuthorizationException {
 		URL url = new URL("http://localhost:8080/reqs-already-service-0.0.1/ProdutoWS?wsdl");
 		QName qname = new QName("http://ws.v1.api.already.reqs.com.br/", "ProdutoWSService");
 		
@@ -39,13 +42,12 @@ public class ProdutoProxy {
 		Token novoToken = new Token();
 		novoToken.setToken(token);
 		
-		TodosOsProdutos parameters = new TodosOsProdutos();
+		GetProdutos parameters = new GetProdutos();
 		parameters.setPaginacao(true);
 		
-		TodosOsProdutosResponse todosOsProdutos = produtoWs.todosOsProdutos(parameters, novoToken);
+		GetProdutosResponse produtos = produtoWs.getProdutos(parameters, novoToken);
 		
-		return todosOsProdutos;
-//		return new ListaProdutoDTO(produtos);
+		return produtos;
 	}
 	
 }

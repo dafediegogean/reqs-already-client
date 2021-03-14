@@ -3,20 +3,21 @@ package br.com.reqs.already.api.v1.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java de todosOsProdutosResponse complex type.
+ * <p>Classe Java de criarPedido complex type.
  * 
  * <p>O seguinte fragmento do esquema especifica o conte�do esperado contido dentro desta classe.
  * 
  * <pre>
- * &lt;complexType name="todosOsProdutosResponse">
+ * &lt;complexType name="criarPedido">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="produtos" type="{http://ws.v1.api.already.reqs.com.br/}listaProdutoDTO" minOccurs="0"/>
+ *         &lt;element name="pedido" type="{http://ws.v1.api.already.reqs.com.br/}pedidoDTO"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +27,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "todosOsProdutosResponse", propOrder = {
-    "produtos"
+@XmlType(name = "criarPedido", propOrder = {
+    "pedido"
 })
-public class TodosOsProdutosResponse {
+public class CriarPedido {
 
-    protected ListaProdutoDTO produtos;
+    @XmlElement(required = true)
+    protected PedidoDTO pedido;
 
     /**
-     * Obt�m o valor da propriedade produtos.
+     * Obt�m o valor da propriedade pedido.
      * 
      * @return
      *     possible object is
-     *     {@link ListaProdutoDTO }
+     *     {@link PedidoDTO }
      *     
      */
-    public ListaProdutoDTO getProdutos() {
-        return produtos;
+    public PedidoDTO getPedido() {
+        return pedido;
     }
 
     /**
-     * Define o valor da propriedade produtos.
+     * Define o valor da propriedade pedido.
      * 
      * @param value
      *     allowed object is
-     *     {@link ListaProdutoDTO }
+     *     {@link PedidoDTO }
      *     
      */
-    public void setProdutos(ListaProdutoDTO value) {
-        this.produtos = value;
+    public void setPedido(PedidoDTO value) {
+        this.pedido = value;
     }
 
 }
