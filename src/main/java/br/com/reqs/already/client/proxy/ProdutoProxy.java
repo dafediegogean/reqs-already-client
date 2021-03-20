@@ -11,6 +11,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
+import br.com.reqs.already.api.v1.ws.AtualizarProduto;
+import br.com.reqs.already.api.v1.ws.AtualizarProdutoResponse;
 import br.com.reqs.already.api.v1.ws.AuthorizationException;
 import br.com.reqs.already.api.v1.ws.CriarProduto;
 import br.com.reqs.already.api.v1.ws.CriarProdutoResponse;
@@ -19,6 +21,8 @@ import br.com.reqs.already.api.v1.ws.GetProdutoByIdResponse;
 import br.com.reqs.already.api.v1.ws.GetProdutos;
 import br.com.reqs.already.api.v1.ws.GetProdutosResponse;
 import br.com.reqs.already.api.v1.ws.ProdutoWS;
+import br.com.reqs.already.api.v1.ws.RemoverProduto;
+import br.com.reqs.already.api.v1.ws.RemoverProdutoResponse;
 import br.com.reqs.already.api.v1.ws.Token;
 
 @WebService
@@ -117,5 +121,53 @@ public class ProdutoProxy {
 		
 		return produtoResponse;
 	}
+	
+	/**
+	 * Endpoint atualizar, recebe como parâmetro o token no header, ProdutoDTO. 
+	 * Atualiza um registro já existente no banco de dados.
+	 * 
+	 * @param token
+	 * @param produtoDTO
+	 * @throws AuthorizationException
+	 */
+	@WebMethod(operationName = "atualizarProduto")
+	@WebResult(name = "produto")
+	public AtualizarProdutoResponse atualizar(@WebParam(name = "token", header = true) String token,
+			@WebParam(name = "produto") @XmlElement(required = true) AtualizarProduto produtoRequest) 
+			throws MalformedURLException, AuthorizationException {
+		URL url = new URL("http://localhost:8080/reqs-already-service-0.0.1/ProdutoWS?wsdl");
+		QName qname = new QName("http://ws.v1.api.already.reqs.com.br/", "ProdutoWSService");
+		
+		Service service = Service.create(url, qname);
+		
+		ProdutoWS produtoWs = service.getPort(ProdutoWS.class);
+		
+		Token novoToken = new Token();
+		novoToken.setToken(token);
+		
+		AtualizarProdutoResponse produtoResponse = produtoWs.atualizarProduto(produtoRequest, novoToken);
+		
+		return produtoResponse;
+	}
+
+	@WebMethod(operationName = "removerProduto")
+	@WebResult(name = "produto")
+	public RemoverProdutoResponse remover(@WebParam(name = "token", header = true) String token,
+			@WebParam(name = "produto") @XmlElement(required = true) RemoverProduto produtoRequest) 
+			throws MalformedURLException, AuthorizationException {
+		URL url = new URL("http://localhost:8080/reqs-already-service-0.0.1/ProdutoWS?wsdl");
+		QName qname = new QName("http://ws.v1.api.already.reqs.com.br/", "ProdutoWSService");
+		
+		Service service = Service.create(url, qname);
+		
+		ProdutoWS produtoWs = service.getPort(ProdutoWS.class);
+		
+		Token novoToken = new Token();
+		novoToken.setToken(token);
+		
+		RemoverProdutoResponse produtoResponse = produtoWs.removerProduto(produtoRequest, novoToken);
+		
+		return produtoResponse;
+	}	
 	
 }
