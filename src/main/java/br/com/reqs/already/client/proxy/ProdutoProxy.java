@@ -150,6 +150,16 @@ public class ProdutoProxy {
 		return produtoResponse;
 	}
 
+	/**
+	 * Endpoint remover, recebe como parâmetro o token no header, e o id do produto,
+	 * para remover da base de dados.
+	 * 
+	 * @param token
+	 * @param produtoRequest
+	 * @return
+	 * @throws MalformedURLException
+	 * @throws AuthorizationException
+	 */
 	@WebMethod(operationName = "removerProduto")
 	@WebResult(name = "produto")
 	public RemoverProdutoResponse remover(@WebParam(name = "token", header = true) String token,
