@@ -25,6 +25,14 @@ import br.com.reqs.already.api.v1.ws.RemoverProduto;
 import br.com.reqs.already.api.v1.ws.RemoverProdutoResponse;
 import br.com.reqs.already.api.v1.ws.Token;
 
+/**
+ * WebService que atende as demais operations para buscar, criar, atualizar 
+ * e remover ao produto.
+ * 
+ * @author <a href="mailto:dafediegogean@gmail.com">Diego Gean da Fé</a>
+ * @version
+ * @since 21 de nov de 2020, 20:48:10
+ */
 @WebService
 public class ProdutoProxy {
 		
