@@ -31,7 +31,7 @@ import br.com.reqs.already.api.v1.ws.Token;
  * 
  * @author <a href="mailto:dafediegogean@gmail.com">Diego Gean da Fé</a>
  * @version
- * @since 21 de nov de 2020, 20:48:10
+ * @since 02 de fev de 2021, 20:21:10
  */
 @WebService
 public class ProdutoProxy {
