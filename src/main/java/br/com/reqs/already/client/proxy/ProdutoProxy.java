@@ -93,7 +93,7 @@ public class ProdutoProxy {
 		novoToken.setToken(token);
 		
 		GetProdutoById produtoRequest = new GetProdutoById();
-		produtoRequest.setId(1L);
+		produtoRequest.setId(id);
 		
 		GetProdutoByIdResponse produtoResponse = produtoWs.getProdutoById(produtoRequest, novoToken);
 		
